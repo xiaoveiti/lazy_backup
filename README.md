@@ -8,19 +8,19 @@ Back up your folders and databases in no time! Restore them just as quickly and 
 
 ## Usage
 
-Please remember to create your own config file and save it in the <b>cfg</b> folder.
+Please remember to create your own config file and save it in the <b>/cfg</b> folder, where you will also find sample configurations..
 
 
 ```
 ./lazy_backup.sh <option> <config file>
 ```
-
+There are several options you can choose.
 
 ```
     Options:
        -e  --export <config>		export files
        -i  --import <config>		import files
-       -h  --help       		show this help
+       -h  --help       		show help
 ```
 
 
