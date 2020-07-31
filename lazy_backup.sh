@@ -245,5 +245,5 @@ do_backup() {
    echo ""
  }
 
-backup
+do_backup
 
