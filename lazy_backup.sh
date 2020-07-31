@@ -140,11 +140,10 @@ config_read_dir() { #syntax <config.cfg> <section>
    cfg_content=${cfg_content//\[end\]/}
 }
 
-####################################################
 
-# Export
+ # Export
 
-prepare_export() {
+export_prepare() {
   config_read_var $own_cfg basic
   now=$(date +%Y-%m-%d)
   backup_now="$backup_dir/$now"
@@ -172,7 +171,7 @@ export_mysql() {
   echo -e "[${green}Ok${nc}] Export: SQL"
 }
 
-compress_export() {
+export_compress() {
    cd $backup_dir/$now
    tar cfvj $backup_dir/"${now}_backup.tar.bz2" * > /dev/null 2>&1
    rm -rf $backup_dir/$now
@@ -181,18 +180,17 @@ compress_export() {
 
 export_files() {
   script_start backup
-  prepare_export
+  export_prepare
   export_dir
   export_mysql
-  compress_export
+  export_compress
   script_stop
  }
 
-######################################
 
  # Import
 
-prepare_import() {
+import_prepare() {
   config_read_var $own_cfg basic
   mkdir $mydir/tmp > /dev/null 2>&1
   tar xfj $backup_file -C $mydir/tmp
@@ -229,17 +227,17 @@ import_mysql() {
 
 import_files() {
   script_start import
-  prepare_import
+  import_prepare
   import_dir
   import_mysql
   script_stop
  }
 
-######################################
 
- # Main
+#################### RUN   ######################
 
-main() {
+
+do_backup() {
    cmdline $string
    echo ""
    echo -e "${blue}Notice:${nc} please use $myname -e to export or -i to import your files"
@@ -247,5 +245,5 @@ main() {
    echo ""
  }
 
-main
+backup
 
