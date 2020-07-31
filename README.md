@@ -1,2 +1,39 @@
 # lazy_backup
-quick upload, rest will follow 
+
+Simple and lean backup script.
+
+Back up your folders and databases in no time! Restore them just as quickly and easily.
+
+
+
+## Usage
+
+Please remember to create your own config file and save it in the <b>cfg</b> folder.
+
+
+```
+./lazy_backup.sh <option> <config file>
+```
+
+
+```
+    Options:
+       -e  --export <config>		export files
+       -i  --import <config>		import files
+       -h  --help       		show this help
+```
+
+
+## Author
+
+* **Veit** - [gxf0](https://github.com/gxf0)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+* feel free to copy and adjust the scripts for your need
+* feel free to improve the scripts - maybe you could also notice me - haha
+* feel free to contact me, if you have any question
