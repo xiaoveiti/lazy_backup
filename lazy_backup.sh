@@ -6,7 +6,7 @@
 # Version 1.2
 # Copyright 2020, Veit <git@brnk.de>
 #
-# Tested: 17.12.2018
+# Tested: xx.xx.xx
 #
 #################################################
 
