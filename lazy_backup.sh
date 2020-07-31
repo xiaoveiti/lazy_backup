@@ -89,7 +89,7 @@ usage() {
     Simple Script to backup and restore your server.
     For more information check https://github.com/gxf0/lazy_backup
 
-    Please make sure to adjust the config file (backup.cfg)
+    Please make sure to adjust the config file 
 
     Options:
        -e  --export <config>		export files
@@ -173,7 +173,7 @@ export_mysql() {
 
 export_compress() {
    cd $backup_dir/$now
-   tar cfvj $backup_dir/"${now}_backup.tar.bz2" * > /dev/null 2>&1
+   tar cfvj $backup_dir/"${now}_${backup_file}.tar.bz2" * > /dev/null 2>&1
    rm -rf $backup_dir/$now
   echo -e "[${green}Ok${nc}] Compress Backup"
  }
@@ -193,7 +193,7 @@ export_files() {
 import_prepare() {
   config_read_var $own_cfg basic
   mkdir $mydir/tmp > /dev/null 2>&1
-  tar xfj $backup_file -C $mydir/tmp
+  tar xfj ${backup_file}.tar.bz2 -C $mydir/tmp
   echo -e "[${green}Ok${nc}] Prepare Import"
 }
 
