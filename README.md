@@ -23,6 +23,10 @@ There are several options you can choose.
        -h  --help       		show help
 ```
 
+# lazy_rclone_sync
+
+Description will follow...
+
 
 ## Author
 
