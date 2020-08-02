@@ -23,19 +23,7 @@
   myname=$(basename $0)
 
   . $mydir/src/design.cfg
-
-  # lazy_backup script parameter
-  backup_dir="/var/mybackup"
-
-  # root directory of backup location
-  remote_root="Server_Backups"
-
-  # name of rclone config file
-  rclone_cfg="backup"
-
-  #delete files older than .. days
-  delete_minimal="14" 
-  delete_full="31"  
+  . $mydir/cfg/rclone.cfg 
 
 
 ### ### ### ### ### ### ### ### ### ### ### ### ##
