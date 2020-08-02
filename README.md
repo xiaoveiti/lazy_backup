@@ -31,11 +31,17 @@ Please remember to edit the <b>/rclone.cf</b> in the <b>/cfg</b> folder and make
 ```
 
 The options are tailored to my needs, but can also be adjusted in the rclone config.
-Personaly I use the following syntax: 
+Personaly I use the following syntax:
+
+for my config files: 
+```
+/cfg/<server>_<minimal/full> 
+```
+for my backup files: 
 ```
 <date>_<server>_<minimal/full>.tar.bz2 
 ```
-The the folder structure looks like this:
+the folder structure:
 ``` 
 storage:<remote_root>/<backup_server>/<minimal/full>
 ``` 
