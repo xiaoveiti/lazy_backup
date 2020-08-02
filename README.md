@@ -1,15 +1,11 @@
 # lazy_backup
 
-Simple and lean backup script.
-
+<b>lazy_backup</b> is simple and lean backup script.
 Back up your folders and databases in no time! Restore them just as quickly and easily.
 
-
+Please remember to create your own config file and save it in the <b>/cfg</b> folder, where you will also find sample configurations.
 
 ## Usage
-
-Please remember to create your own config file and save it in the <b>/cfg</b> folder, where you will also find sample configurations..
-
 
 ```
 ./lazy_backup.sh <option> <config file>
@@ -23,9 +19,23 @@ There are several options you can choose.
        -h  --help       		show help
 ```
 
-# lazy_rclone_sync
+# lazy_rclone
 
-Description will follow...
+<b>lazy_rclone</b> helps you upload your backups to external storage e.g. AWS, Dropbox, Onedrive, etc and ensures that older backups are automatically deleted after a defined time.
+
+Please remember to edit the <b>/rclone.cf</b> in the <b>/cfg</b> folder and make sure you allready installed and configured rclone to your personal need.   
+
+## Usage
+```
+./lazy_rclone.sh <server> <minimal/full>
+```
+
+The options are tailored to my needs, but can also be adjusted in the rclone config.
+Personaly I use the following syntax: <date>_<server>_<minimal/full>.tar.bz2 
+The the folder structure looks like this: storage:<remote_root>/<backup_server>/<minimal/full>
+ 
+
+
 
 
 ## Author
