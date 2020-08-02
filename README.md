@@ -30,7 +30,7 @@ Please remember to edit the <b>/rclone.cf</b> in the <b>/cfg</b> folder and make
 ./lazy_rclone.sh <server> <minimal/full>
 ```
 
-The options are tailored to my needs, but can also be adjusted in the rclone config.
+The options are tailored to my needs, but can also be adjusted in the rclone and backup config files.
 Personaly I use the following syntax:
 
 for my config files: 
