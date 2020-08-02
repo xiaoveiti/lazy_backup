@@ -231,7 +231,9 @@ import_files() {
   import_dir
   import_mysql
   script_stop
- }
+}
+
+
 
 
 #################### RUN   ######################
@@ -243,7 +245,7 @@ do_backup() {
    echo -e "${blue}Notice:${nc} please use $myname -e to export or -i to import your files"
    echo -e "        for help, please use $myname -h (--help)"
    echo ""
- }
+}
 
 do_backup
 

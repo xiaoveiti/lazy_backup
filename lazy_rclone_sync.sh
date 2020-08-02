@@ -11,7 +11,7 @@
 #################################################
 
 ##
-##  Usage: ./lazy_rclone.sh <minimal/full>
+##  Usage: ./lazy_rclone.sh <server> <minimal/full>
 ##
 
 ###################  Config  ####################
@@ -25,12 +25,7 @@
   . $mydir/src/design.cfg
 
   # lazy_backup script parameter
-  lazy_backup_dir="/opt/lazy_backup"
   backup_dir="/var/mybackup"
-
-  # server name : my personal syntax for backups: 
-  # <date>_<server>_<minimal/full>.tar.bz2
-  backup_server="xf0"
 
   # root directory of backup location
   remote_root="Server_Backups"
@@ -43,20 +38,27 @@
   delete_full="31"  
 
 
+### ### ### ### ### ### ### ### ### ### ### ### ##
+
+
+  # server name : my personal syntax for backups: 
+  # <date>_<server>_<minimal/full>.tar.bz2
+  backup_server="$1"
+
 
 ######### DO NOT EDIT BELOW THIS LINE  ##########
 
 
 backup_options() {
-  if [ "$1" = minimal ]; then
+  if [ "$2" = minimal ]; then
     backup_kind="minimal"
     clean_time="${delete_minimal}d"
-  elif [ "$1" = full ]; then
+  elif [ "$2" = full ]; then
     backup_kind="full"
     clean_time="${delete_full}d"
   else
     echo ""
-    echo -e "[${red}Error${nc}] Usage: ${mydir}/${myname} <minimal/full>"
+    echo -e "[${red}Error${nc}] Usage: ${mydir}/${myname} <server> <minimal/full>"
     echo ""
     exit 1
   fi
@@ -64,11 +66,12 @@ backup_options() {
   now=$(date +%Y-%m-%d)
   backup_file="${backup_server}_${backup_kind}"
   remote_dir="${rclone_cfg}:${remote_root}/${backup_server}/${backup_kind}"
+
 }
 
 
 backup_start() {
-  $lazy_backup_dir/lazy_backup.sh -e ${backup_server}_${backup_kind}.cfg
+  $mydir/lazy_backup.sh -e ${backup_server}_${backup_kind}.cfg
 }
 
 backup_upload() {
