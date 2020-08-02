@@ -23,7 +23,7 @@ There are several options you can choose.
 
 <b>lazy_rclone</b> helps you upload your backups to external storage e.g. AWS, Dropbox, Onedrive, etc and ensures that older backups are automatically deleted after a defined time.
 
-Please remember to edit the <b>/rclone.cf</b> in the <b>/cfg</b> folder and make sure you allready installed and configured rclone to your personal need.   
+Please remember to edit the <b>/rclone.cf</b> in the <b>/cfg</b> folder and make sure you allready installed and configured rclone to your personal need. In combination with daily, weekly or monthly cronjobs definitely useful.  
 
 ## Usage
 ```
