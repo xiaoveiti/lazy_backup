@@ -51,7 +51,7 @@ storage:<remote_root>/<backup_server>/<minimal/full>
 
 ## Author
 
-* **Veit** - [gxf0](https://github.com/gxf0)
+* **Veit** - [xiaoveiti](https://github.com/gxiaoveiti)
 
 ## License
 
